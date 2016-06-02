@@ -121,7 +121,7 @@
         
         HTS*hts=[attay objectAtIndex:0];
         
-        User*user=[[User alloc] init];;
+        HealthUser*user=[[HealthUser alloc] init];;
                 
         user.clientSecret=@"2407103b306943fcb33ef2863ae84988";
         
@@ -380,7 +380,7 @@
         [bpInstance commandTransferMemoryDataWithUser:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
             _tipTextView.text = [NSString stringWithFormat:@"Authentication Result:%d",result];
             NSLog(@"Authentication Result:%d",result);
-        }totalCount:^(NSNumber *num){
+        } totalCount:^(NSNumber *num) {
             NSLog(@"上传总条数；%@",num);
             _tipTextView.text = [NSString stringWithFormat:@"%@\n历史数量为:%@ ",_tipTextView.text,num];
         } pregress:^(NSNumber *progress){
@@ -439,7 +439,7 @@
         [bpInstance commandTransferMemoryDataWithUser:YourUserName clientID:SDKKey clientSecret:SDKSecret Authentication:^(UserAuthenResult result) {
             _tipTextView.text = [NSString stringWithFormat:@"Authentication Result:%d",result];
             NSLog(@"Authentication Result:%d",result);
-        }totalCount:^(NSNumber *num){
+        } withGroupNumber:[[NSNumber alloc]init] totalCount:^(NSNumber *num) {
             NSLog(@"上传总条数；%@",num);
             _tipTextView.text = [NSString stringWithFormat:@"%@\n历史数量为:%@ ",_tipTextView.text,num];
         } pregress:^(NSNumber *progress){

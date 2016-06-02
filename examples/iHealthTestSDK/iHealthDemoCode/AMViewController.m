@@ -129,7 +129,7 @@
     if(amArray.count==1){
         AM3 *amInstance = [amArray objectAtIndex:0];
         tempAM3Instance = amInstance;
-        User *myUser = [[User alloc]init];
+        HealthUser *myUser = [[HealthUser alloc]init];
         myUser.clientID = SDKKey;
         myUser.clientSecret = SDKSecret;
         myUser.userID = YourUserName;
@@ -174,7 +174,7 @@
     }
 }
 
--(void)commandUpdateUserInfo:(User *)myUser forAM:(AM3 *)amInstance{
+-(void)commandUpdateUserInfo:(HealthUser *)myUser forAM:(AM3 *)amInstance{
     myUser.birthday = [NSDate dateWithTimeIntervalSince1970:0];
     myUser.sex = UserSex_Male;
     myUser.height = @165;
@@ -289,7 +289,7 @@
         if(amArray.count==1){
             AM3S *amInstance = [amArray objectAtIndex:0];
             tempAM3SInstance = amInstance;
-            User *myUser = [[User alloc]init];
+            HealthUser *myUser = [[HealthUser alloc]init];
             myUser.clientID = SDKKey;
             myUser.clientSecret = SDKSecret;
             myUser.userID = YourUserName;
@@ -337,7 +337,7 @@
         if(amArray.count==1){
             AM4 *amInstance = [amArray objectAtIndex:0];
             tempAM4Instance = amInstance;
-            User *myUser = [[User alloc]init];
+            HealthUser *myUser = [[HealthUser alloc]init];
             myUser.clientID = SDKKey;
             myUser.clientSecret = SDKSecret;
             myUser.userID = YourUserName;
@@ -389,7 +389,7 @@
                 
                 NSLog(@"Bined user:%d",resetSuc);
                 
-                User *myUser = [[User alloc]init];
+                HealthUser *myUser = [[HealthUser alloc]init];
 
                 //update userInfo
                 [self commandUpdateUserInfo:myUser forAM3S:tempAM3SInstance];
@@ -408,7 +408,7 @@
             [tempAM4Instance commandSetAM4UserID:@123456789 withRandom:self.randomTextField.text DisposeBlock:^(BOOL resetSuc) {
                 NSLog(@"Bined user:%d",resetSuc);
                 
-                User *myUser = [[User alloc]init];
+                HealthUser *myUser = [[HealthUser alloc]init];
 
                 [self commandUpdateUserInfo:myUser forAM4:tempAM4Instance];
                 
@@ -434,7 +434,7 @@
 }
 
 
--(void)commandUpdateUserInfo:(User *)myUser forAM3S:(AM3S *)amInstance{
+-(void)commandUpdateUserInfo:(HealthUser *)myUser forAM3S:(AM3S *)amInstance{
     myUser.birthday = [NSDate dateWithTimeIntervalSince1970:0];
     myUser.sex = UserSex_Male;
     myUser.height = @165;
@@ -622,7 +622,7 @@
 
 
 #pragma mark- AM4
--(void)commandUpdateUserInfo:(User *)myUser forAM4:(AM4 *)amInstance{
+-(void)commandUpdateUserInfo:(HealthUser *)myUser forAM4:(AM4 *)amInstance{
     myUser.birthday = [NSDate dateWithTimeIntervalSince1970:0];
     myUser.sex = UserSex_Male;
     myUser.height = @165;
